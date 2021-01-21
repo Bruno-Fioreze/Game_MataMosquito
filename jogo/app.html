@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="estilo.css">
+		
+		<script src="jogo.js"></script>
+
+			<meta charset="utf-8">
+	</head>
+	<body onresize="">
+		<div class="principal">
+			<div class="menu-vidas">
+				<img id="vida1" src="imagens/coracao_cheio.png">
+				<img id="vida2" src="imagens/coracao_cheio.png">
+				<img id="vida3" src="imagens/coracao_cheio.png">
+			</div>
+			<div class="cronometro">
+				Tempo restante <span id="tempo"></span>
+			</div>
+		</div>
+		<script>
+		var valor = sessionStorage.getItem('nivel');
+			let setTime;
+
+			if (valor=="Normal") {
+
+				setTime = 4;
+
+			}
+			if (valor=="Dificil") {
+
+				setTime = 3;
+			}
+			if (valor=="Chuck") {
+
+				setTime = 1;
+			}
+				console.log(valor)
+			document.getElementById('tempo').innerHTML = tempo;
+			var mosquito = setInterval(function(){
+				posicaoRandomica()
+				ajustaTamanhoJogo()
+			}, 1000 * setTime)
+			
+			
+		</script>
+	</body>
+</html>

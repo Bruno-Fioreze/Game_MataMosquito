@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Game Over</title>
+	<link rel="stylesheet" type="text/css" href="game-over.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<meta charset="utf-8">
+</head>
+<body>
+	 
+	<div class="center text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					 <img src="imagens/game.png">
+							
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					 <div class="mb-2">
+						<select id="niveis"class="form-control">
+							<option value="">Selecione o Nivel</option>
+							<option value="Normal">Normal</option>
+							<option value="Dificil">Dificil</option>
+							<option value="Chuck">Chuck Norris</option>
+						</select>
+					 </div>		
+				</div>
+			</div>		
+			<div class="row">
+				<div class="col">
+					<button class="button btn-warning btn-lg" onclick="iniciarJogo()" >
+						Iniciar Jogo
+					</button>
+				</div>
+			</div>			
+		
+		</div>	
+	</div>
+	<script>
+	function iniciarJogo(){
+	 
+	var valor = document.getElementById('niveis').value
+	if (valor == '') {
+		alert("Selecione um nivel")
+		return false;
+	}
+	sessionStorage.setItem('nivel', ''+ valor+'');
+	window.location.href = "app.html"
+
+
+
+			 
+
+	}
+</script>	
+</body>
+</html>
